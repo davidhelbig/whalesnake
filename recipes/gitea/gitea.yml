@@ -1,0 +1,8 @@
+recipe:
+  - container_name: gitea
+    command: stop
+  - container_name: gitea-db-1
+    postgres_user: gitea
+    output_archive: gitea_postgres_archive.gz
+  - container_name: gitea
+    command: start
